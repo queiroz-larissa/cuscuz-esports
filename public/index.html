@@ -127,6 +127,24 @@
 
     <div class="container-lideres">
 
+      <!-- BARBER -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/barber.png" alt="BARBER">
+
+        <div class="conteudo-card-lider">
+
+          <h3>BARBER</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('barber')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
       <!-- BEREANO -->
 
       <div class="card-lider">
@@ -192,24 +210,6 @@
           <h3>JUBILEU</h3>
 
           <button type="button" class="botao-ver-mais" onclick="abrirModalLider('jubileu')">
-            VER MAIS
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- BARBER -->
-
-      <div class="card-lider">
-
-        <img class="imagem-lider" src="./assets/imgs/barber.png" alt="BARBER">
-
-        <div class="conteudo-card-lider">
-
-          <h3>BARBER</h3>
-
-          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('barber')">
             VER MAIS
           </button>
 
@@ -447,6 +447,21 @@
 
     const lideres = {
 
+      // BARBER
+
+      barber: {
+        nickname: "cZ BARBER",
+        nome: "",
+        playerId: "",
+        inicioPubg: "",
+        inicioCuscuz: "",
+        armaFavorita: "",
+        mapaFavorito: "",
+        funcao: "",
+        descricao: "",
+        imagem: "./assets/imgs/barber.png"
+      },
+
       // BEREANO
 
       bereano: {
@@ -505,21 +520,6 @@
         funcao: "",
         descricao: "",
         imagem: "./assets/imgs/jubileu.png"
-      },
-
-      // BARBER
-
-      barber: {
-        nickname: "cZ BARBER",
-        nome: "",
-        playerId: "",
-        inicioPubg: "",
-        inicioCuscuz: "",
-        armaFavorita: "",
-        mapaFavorito: "",
-        funcao: "",
-        descricao: "",
-        imagem: "./assets/imgs/barber.png"
       }
 
     };
@@ -568,19 +568,46 @@
 
       modal.style.display = "flex";
 
+      document.body.style.overflow = "hidden";
+
     }
 
 
     // FUNÇÃO PARA FECHAR O MODAL
 
     function fecharModalLider() {
-
       const modal = document.getElementById("modalLider");
 
-      modal.style.display = "none";
+      if (modal.style.display != "flex" ||
+        modal.classList.contains("fechando")) {
+        return;
+      }
 
+      modal.classList.add("fechando");
+
+      setTimeout(function () {
+        modal.style.display = "none";
+        modal.classList.remove("fechando");
+
+        document.body.style.overflow = "";
+      }, 300);
     }
 
+    // FECHAR MODAL AO CLICAR FORA
+
+    document.getElementById("modalLider").addEventListener("click", function (evento) {
+      if (evento.target == this) {
+        fecharModalLider();
+      }
+    });
+
+    // FECHAR MODAL PRESSIONANDO ESC
+
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key == "Escape") {
+        fecharModalLider();
+      }
+    });
 
     // ANIMAÇÃO DOS LÍDERES DURANTE O SCROLL
 
