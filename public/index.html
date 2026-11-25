@@ -1,81 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Página Inicial</title>
+  <title>Cuscuz Esports | Página Inicial</title>
 
-    <script src="./js/sessao.js"></script>
+  <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="icon" href="./assets/imgs/logo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="container header">
+
+      <img src="./assets/imgs/logo.png" class="titulo" alt="Logo Cuscuz Esports">
+
+      <ul class="navbar">
+
+        <li class="agora">
+          <a href="./index.html">Inicial</a>
+        </li>
+
+        <li>
+          <a href="./valores.html">Valores</a>
+        </li>
+
+        <li>|</li>
+
+        <li>
+          <a href="./login.html">Login</a>
+        </li>
+
+        <li>
+          <a href="./cadastro.html">Cadastro</a>
+        </li>
+
+      </ul>
+
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
+  </div>
+
+
+  <!-- BANNER PRINCIPAL -->
+  <div class="banner">
+
+    <div class="text">
+      <br>
+      <br>
+      <br>
+      <h1>Cuscuz Esports</h1>
+
+      <h3>
+        Uma história construída por pessoas, amizades e competição.
+        Conheça o Cuscuz Esports e acompanhe nossa trajetória
+        no cenário de PUBG Mobile.
+      </h3>
+
+      <br>
+      <br>
+
+      <a href="#historia-anime">
+        <button>Explorar a história</button>
+      </a>
+
     </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+
+  </div>
+  <br>
+  <br>
+
+  <!-- APRESENTAÇÃO DO ANIME -->
+  <div class="sobre-anime" id="historia-anime">
+
+    <div class="div-texto">
+      <h1>Sobre a Historia</h1>
+
+      <h3>
+        A história se passa em um mundo onde a humanidade vive protegida por enormes muralhas, tentando
+        sobreviver longe das criaturas gigantes conhecidas como Titãs.
+
+        <br><br>
+
+        No primeiro episódio, porém, essa sensação de segurança é destruída, mudando completamente a vida dos
+        personagens e mostrando a ameaça que existe além das muralhas.
+
+        <br><br>
+
+        E essa é apenas a primeira vez que somos apresentados aos seres que se tornariam uma das partes mais
+        marcantes da obra: os Titãs.
+
+      </h3>
+
+    </div>
+    <img src="./assets/imgs/imagem_muralhas.jpg" style="height: 550px;">
+
+  </div>
+
+
+  <!-- =====================================
+         CONHEÇA OS LÍDERES
+===================================== -->
+
+  <section class="secao-lideres" id="lideres">
+
+    <!-- TÍTULO DA SEÇÃO -->
+
+    <div class="cabecalho-lideres">
+
+      <span class="titulo-fundo-lideres" aria-hidden="true">
+        CUSCUZ ESPORTS
+      </span>
+
+      <h2>CONHEÇA OS LÍDERES</h2>
+
+    </div>
+
+    <!-- CONTAINER DOS LÍDERES -->
+
+    <div class="container-lideres">
+
+      <!-- BEREANO -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/bereano.png" alt="BEREANO">
+
+        <div class="conteudo-card-lider">
+
+          <h3>BEREANO</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('bereano')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- EURO -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/euro.png" alt="EURO">
+
+        <div class="conteudo-card-lider">
+
+          <h3>EURO</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('euro')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- LARÁPIO -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/larapio.png" alt="LARÁPIO">
+
+        <div class="conteudo-card-lider">
+
+          <h3>LARÁPIO</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('larapio')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- JUBILEU -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/jubileu.png" alt="JUBILEU">
+
+        <div class="conteudo-card-lider">
+
+          <h3>JUBILEU</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('jubileu')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- BARBER -->
+
+      <div class="card-lider">
+
+        <img class="imagem-lider" src="./assets/imgs/barber.png" alt="BARBER">
+
+        <div class="conteudo-card-lider">
+
+          <h3>BARBER</h3>
+
+          <button type="button" class="botao-ver-mais" onclick="abrirModalLider('barber')">
+            VER MAIS
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="sobre">
+
+    <div class="div-mundo">
+
+      <img src="./assets/imgs/hajime.jpg" alt="Hajime Isayama">
+      <br>
+
+      <h2 class="titulo-sobreposto" data-text="Autor">O criador da obra</h2>
+
+      <p>
+        Shingeki no Kyojin foi criado por Hajime Isayama.
+        A obra começou como um mangá e conquistou leitores ao apresentar
+        uma história que, inicialmente, parecia ser apenas sobre a luta
+        da humanidade contra os Titãs.
+      </p>
+
+    </div>
+
+
+    <!-- CARD 2 -->
+    <div class="div-mundo">
+
+      <img src="./assets/imgs/exploracao.jpg" alt="Universo de Shingeki no Kyojin">
+      <br>
+
+      <h2 class="titulo-sobreposto" data-text="transformacao">Uma história em transformação</h2>
+
+      <p>
+        O que começa como uma luta pela sobrevivência, se desenvolve de forma
+        cada vez mais complexa. A cada descoberta, novos conflitos, escolhas
+        e perspectivas transformam completamente a maneira como enxergamos
+        esse mundo.
+      </p>
+
+    </div>
+
+
+    <div class="div-mundo">
+
+      <img src="./assets/imgs/alem_muralhas.jpg" alt="As muralhas de Shingeki no Kyojin">
+      <br>
+      <h2 class="titulo-sobreposto" data-text="Alem dos Titas">Muito alem dos Titas</h2>
+
+      <p>
+        Além da ação e dos mistérios, Shingeki no Kyojin aborda temas como
+        liberdade, escolhas, perdas, preconceitos e diferentes perspectivas.
+        São reflexões que tornam a obra marcante muito além de seus conflitos.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="alem">
+
+    <div class="div-texto">
+
+      <h2>O que existe além das muralhas?</h2>
+
+      <p>
+        Para mim, Shingeki no Kyojin não é apenas um anime.
+        É uma obra que me apresentou diferentes formas de enxergar
+        o mundo e me fez refletir sobre valores, escolhas, amizades,
+        liberdade e crescimento.
+      </p>
+
+      <p>
+        Nesta página, compartilho um pouco mais sobre a minha relação
+        com a obra e os valores que fazem parte da minha história.
+      </p>
+
+      <a href="./valores.html">
+        <button>Conheça meus valores</button>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-conteudo">
+
+      <div class="footer-identidade">
+        <h2>Além das Muralhas</h2>
+
+        <p>
+          Reflexões sobre liberdade, sociedade,
+          escolhas e aquilo que existe além dos muros.
+        </p>
+      </div>
+
+      <div class="footer-ods">
+        <h3>Objetivos que inspiram reflexão</h3>
+
+        <div class="ods-lista">
+          <img src="./assets/imgs/ODS-5.png" alt="ODS 5 - Igualdade de gênero">
+          <img src="./assets/imgs/ODS-8.webp" alt="ODS 10 - Redução das desigualdades">
+          <img src="./assets/imgs/ODS-10.webp" alt="ODS 16 - Paz, justiça e instituições eficazes">
         </div>
       </div>
+
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
+    <br>
+    <div class="footer-final">
+      <p>Projeto individual • SPTech • 2026</p>
+      <p>Desenvolvido por Laripop ♥</p>
+    </div>
+
+  </footer>
+
+
+  <!-- MODAL DOS LÍDERES -->
+
+  <div class="modal-lider" id="modalLider" role="dialog" aria-modal="true" aria-labelledby="modalNickname"
+    style="display: none;">
+
+    <div class="conteudo-modal-lider">
+
+      <!-- BOTÃO DE FECHAR -->
+
+      <button type="button" class="fechar-modal" onclick="fecharModalLider()" aria-label="Fechar modal">
+        &times;
+      </button>
+
+      <!-- LADO ESQUERDO: IMAGEM -->
+
+      <div class="modal-imagem">
+
+        <img id="modalImagem" alt="">
+
       </div>
+
+      <!-- LADO DIREITO: INFORMAÇÕES -->
+
+      <div class="modal-informacoes">
+
+        <!-- IDENTIFICAÇÃO -->
+
+        <span class="modal-categoria">
+          LIDERANÇA | CUSCUZ ESPORTS
+        </span>
+
+        <h2 id="modalNickname"></h2>
+
+        <!-- DADOS DO LÍDER -->
+
+        <div class="modal-dados">
+
+          <!-- NOME -->
+
+          <div class="modal-info">
+            <h3>NOME</h3>
+            <p id="modalNome"></p>
+          </div>
+
+          <!-- PLAYER ID -->
+
+          <div class="modal-info">
+            <h3>PLAYER ID</h3>
+            <p id="modalPlayerId"></p>
+          </div>
+
+          <!-- TEMPO DE JOGO -->
+
+          <div class="modal-info">
+            <h3>JOGA DESDE</h3>
+            <p id="modalInicioPubg"></p>
+          </div>
+
+          <!-- TEMPO DE CUSCUZ -->
+
+          <div class="modal-info">
+            <h3>NO CUSCUZ DESDE</h3>
+            <p id="modalInicioCuscuz"></p>
+          </div>
+
+          <!-- ARMA FAVORITA -->
+
+          <div class="modal-info">
+            <h3>ARMA FAVORITA</h3>
+            <p id="modalArmaFavorita"></p>
+          </div>
+
+          <!-- MAPA FAVORITO -->
+
+          <div class="modal-info">
+            <h3>MAPA FAVORITO</h3>
+            <p id="modalMapaFavorito"></p>
+          </div>
+
+          <!-- FUNÇÃO NO JOGO -->
+
+          <div class="modal-info">
+            <h3>FUNÇÃO NO JOGO</h3>
+            <p id="modalFuncao"></p>
+          </div>
+
+        </div>
+
+        <!-- DESCRIÇÃO DO LÍDER -->
+
+        <div class="modal-descricao">
+
+          <h3>SOBRE O LÍDER</h3>
+
+          <p id="modalDescricao"></p>
+
+        </div>
+
+      </div>
+
     </div>
-  </body>
+
+  </div>
+
+
+  <script>
+
+    // INFORMAÇÕES DOS LÍDERES
+
+    const lideres = {
+
+      // BEREANO
+
+      bereano: {
+        nickname: "cZ BEREANO",
+        nome: "Sales",
+        playerId: "",
+        inicioPubg: "",
+        inicioCuscuz: "",
+        armaFavorita: "",
+        mapaFavorito: "",
+        funcao: "",
+        descricao: "",
+        imagem: "./assets/imgs/bereano.png"
+      },
+
+      // EURO
+
+      euro: {
+        nickname: "cZ EURO",
+        nome: "Larissa Queiroz",
+        playerId: "",
+        inicioPubg: "",
+        inicioCuscuz: "2026",
+        armaFavorita: "AKM",
+        mapaFavorito: "Vikendi",
+        funcao: "Homem livre",
+        descricao: "",
+        imagem: "./assets/imgs/euro.png"
+      },
+
+      // LARÁPIO
+
+      larapio: {
+        nickname: "cZ LARÁPIO",
+        nome: "Wesley",
+        playerId: "5795035255",
+        inicioPubg: "2018",
+        inicioCuscuz: "2023",
+        armaFavorita: "AUG",
+        mapaFavorito: "Erangel",
+        funcao: "Suporte",
+        descricao: "O cara que levanta o amigo caído",
+        imagem: "./assets/imgs/larapio.png"
+      },
+
+      // JUBILEU
+
+      jubileu: {
+        nickname: "cZ JUBILEU",
+        nome: "",
+        playerId: "",
+        inicioPubg: "",
+        inicioCuscuz: "",
+        armaFavorita: "",
+        mapaFavorito: "",
+        funcao: "",
+        descricao: "",
+        imagem: "./assets/imgs/jubileu.png"
+      },
+
+      // BARBER
+
+      barber: {
+        nickname: "cZ BARBER",
+        nome: "",
+        playerId: "",
+        inicioPubg: "",
+        inicioCuscuz: "",
+        armaFavorita: "",
+        mapaFavorito: "",
+        funcao: "",
+        descricao: "",
+        imagem: "./assets/imgs/barber.png"
+      }
+
+    };
+
+
+    // FUNÇÃO PARA ABRIR O MODAL
+
+    function abrirModalLider(liderSelecionado) {
+
+      const dadosLider = lideres[liderSelecionado];
+
+      document.getElementById("modalNickname").innerText =
+        dadosLider.nickname;
+
+      document.getElementById("modalNome").innerText =
+        dadosLider.nome;
+
+      document.getElementById("modalPlayerId").innerText =
+        dadosLider.playerId;
+
+      document.getElementById("modalInicioPubg").innerText =
+        dadosLider.inicioPubg;
+
+      document.getElementById("modalInicioCuscuz").innerText =
+        dadosLider.inicioCuscuz;
+
+      document.getElementById("modalArmaFavorita").innerText =
+        dadosLider.armaFavorita;
+
+      document.getElementById("modalMapaFavorito").innerText =
+        dadosLider.mapaFavorito;
+
+      document.getElementById("modalFuncao").innerText =
+        dadosLider.funcao;
+
+      document.getElementById("modalDescricao").innerText =
+        dadosLider.descricao;
+
+      document.getElementById("modalImagem").src =
+        dadosLider.imagem;
+
+      document.getElementById("modalImagem").alt =
+        dadosLider.nickname;
+
+      const modal = document.getElementById("modalLider");
+
+      modal.style.display = "flex";
+
+    }
+
+
+    // FUNÇÃO PARA FECHAR O MODAL
+
+    function fecharModalLider() {
+
+      const modal = document.getElementById("modalLider");
+
+      modal.style.display = "none";
+
+    }
+
+
+    // ANIMAÇÃO DOS LÍDERES DURANTE O SCROLL
+
+    const containerLideres = document.querySelector(".container-lideres");
+
+    const observadorLideres = new IntersectionObserver(
+
+      function (elementos) {
+
+        if (elementos[0].isIntersecting) {
+
+          containerLideres.classList.remove("preparar-animacao");
+
+          containerLideres.classList.add("animar-lideres");
+
+          observadorLideres.unobserve(containerLideres);
+
+        }
+
+      },
+
+      {
+        threshold: 0.15
+      }
+
+    );
+
+    containerLideres.classList.add("preparar-animacao");
+
+    observadorLideres.observe(containerLideres);
+
+
+  </script>
+
+
+</body>
 
 </html>
