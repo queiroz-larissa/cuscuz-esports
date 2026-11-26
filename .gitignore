@@ -1,5 +1,12 @@
-# A linha abaixo determina que o diretório node_modules não será enviado ao repositório remoto
-node_modules
-package-lock.json
+# Dependências do Node.js
+node_modules/
 
-.github
+# Arquivos de ambiente e credenciais
+.env
+.env.*
+
+# Permitir arquivo de exemplo sem credenciais reais
+!.env.example
+
+# Arquivos de configuração do GitHub
+.github/
