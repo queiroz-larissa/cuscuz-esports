@@ -17,36 +17,78 @@
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="container header">
+  
+  <!-- =====================================
+                HEADER
+  ===================================== -->
 
-      <img src="./assets/imgs/logo.png" class="titulo" alt="Logo Cuscuz Esports">
+  <header class="header">
 
-      <ul class="navbar">
+    <div class="container-header">
 
-        <li class="agora">
-          <a href="./index.html">Inicial</a>
-        </li>
+      <!-- LOGOTIPO -->
 
-        <li>
-          <a href="./valores.html">Valores</a>
-        </li>
+      <a href="./index.html" class="logo-header">
+        <img src="./assets/imgs/logo.png" alt="Cuscuz Esports">
+      </a>
 
-        <li>|</li>
+      <!-- MENU DE NAVEGAÇÃO -->
 
-        <li>
-          <a href="./login.html">Login</a>
-        </li>
+      <nav class="navegacao-header" aria-label="Menu principal">
 
-        <li>
-          <a href="./cadastro.html">Cadastro</a>
-        </li>
+        <ul class="menu-header">
 
-      </ul>
+          <li>
+            <a href="./index.html" class="ativo" aria-current="page">
+              HOME
+            </a>
+          </li>
+
+          <li>
+            <a href="./ranking.html">
+              RANKING
+            </a>
+          </li>
+
+          <li>
+            <a href="./sobre.html">
+              SOBRE
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- ACESSO ADMINISTRATIVO -->
+
+      <a href="./login.html" class="botao-login-header">
+
+        <svg class="icone-login"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+
+        </svg>
+
+        <span>LOGIN</span>
+
+      </a>
 
     </div>
-  </div>
+
+  </header>
+
 
 
   <!-- BANNER PRINCIPAL -->
