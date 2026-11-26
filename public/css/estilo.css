@@ -752,7 +752,7 @@ a {
 
 /* COMPENSAÇÃO DO HEADER NA ROLAGEM */
 
-#historia-anime {
+#sobre {
   scroll-margin-top: var(--tamanho-header);
 }
 
@@ -816,8 +816,10 @@ a {
     height: 20px;
   }
 
-  #historia-anime {
-    scroll-margin-top: 115px;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
 }
@@ -842,52 +844,6 @@ a {
   html {
     scroll-behavior: smooth;
   }
-
-}
-
-.banner2 {
-  display: flex;
-  height: var(--tamanho-banner);
-  color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('../assets/imgs/eren_liberdade.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 600px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  background-size: cover;
-}
-
-.banner2 .text {
-  display: flex;
-  width: 1000px;
-  height: 550px;
-  margin: 100px;
-  flex-direction: column;
-  align-items: center;
-  /* Centraliza os textos (h1, h2, h3) dentro da home */
-  text-align: center;
-  border-radius: 15px;
-  /* fundo do painel de texto usa vermelho forte (variante sólida) */
-}
-
-.banner .text {
-  display: flex;
-  width: 1000px;
-  height: 550px;
-  margin: 100px;
-  flex-direction: column;
-  align-items: center;
-  /* Centraliza os textos (h1, h2, h3) dentro da home */
-  text-align: center;
-  border-radius: 15px;
-}
-
-.text h3 {
-  max-width: 60%;
 
 }
 
@@ -934,56 +890,7 @@ button:hover,
   color: var(--cor-papiro);
 }
 
-.banner .container {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
 
-.banner .container p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
-/* MISSÃO VISÃO VALORES */
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container {
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  padding: 300px;
-
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 /* FOOTER */
 
@@ -1312,915 +1219,6 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll;
-  height: var(--tamanho-simulador);
-}
-
-/* ALERTA */
-
-#alerta {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.mensagem-alarme {
-  background-color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.mensagem-alarme h3 {
-  font-size: 14px;
-  margin: 0;
-}
-
-.mensagem-alarme .informacao {
-  width: 66%;
-}
-
-.alarme-sino {
-  width: 48px;
-  height: 48px;
-  animation-name: bell;
-  animation-duration: 4s;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
-  background-size: cover;
-  animation-iteration-count: infinite;
-}
-
-
-.alem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 600px;
-  width: 100%;
-  /* background-color: #c1134b; */
-}
-
-.titulo-sobreposto {
-  position: relative;
-  /* Define o título como a referência para o conteúdo de fundo */
-  font-size: 1.5rem;
-  color: #000000;
-  /* Cor do título principal (frente) */
-  font-family: 'Ditty', sans-serif;
-  font-weight: 800;
-  text-align: center;
-  z-index: 2;
-  /* Garante que o título principal fique na frente */
-}
-
-.titulo-sobreposto::before {
-  content: attr(data-text);
-  /* Puxa o texto do atributo 'data-text' do HTML */
-  position: absolute;
-  /* Tira o elemento do fluxo e permite posicionar livremente */
-  top: 50%;
-  /* Alinha verticalmente ao centro */
-  left: 50%;
-  /* Alinha horizontalmente ao centro */
-  transform: translate(-50%, -50%);
-  /* Ajusta a ancoragem exatamente no meio */
-
-  font-size: 4rem;
-  /* Tamanho bem maior para o fundo */
-  color: rgba(0, 0, 0, 0.096);
-  /* Cor clara/translúcida para não atrapalhar a leitura */
-  z-index: -1;
-  /* Joga o texto para trás do título principal */
-  white-space: nowrap;
-  /* Impede que o texto de fundo quebre linha */
-}
-
-
-.sobre {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  min-height: 600px;
-  padding: 60px 0;
-  width: 100%;
-  /* background-color: #c1134b; */
-}
-
-
-
-.sobre-g {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: justify;
-  align-items: center;
-  height: 600px;
-  width: 1000px;
-  color: white;
-  /* borda usa vermelho de batalha */
-  border: 1px solid var(--cor-vermelho-batalha);
-  border-radius: 15px;
-}
-
-
-.sobre-g h3 {
-  max-width: 77%;
-}
-
-.sobre-geral {
-  display: flex;
-  flex-direction: row;
-  height: 500px;
-  width: 90%;
-  align-items: center;
-  align-self: center;
-  justify-content: space-between;
-}
-
-.sobre-anime {
-  display: flex;
-  height: 700px;
-  width: 100%;
-  align-items: center;
-  align-self: center;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: var(--cor-strong-red);
-  clip-path: polygon(0 0,
-      90% 0,
-      100% 15%,
-      100% 100%,
-      10% 100%,
-      0 85%);
-}
-
-.sobre-anime img {
-  width: 550px;
-  height: 650px;
-  border-radius: 15px;
-}
-
-.cards-text {
-  display: flex;
-  flex-direction: row;
-  height: 500px;
-  width: 90%;
-  align-items: center;
-  align-self: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.informacoes {
-  height: 1200px;
-  width: 100%;
-}
-
-.fotos img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 500px;
-  width: 430px;
-  background-color: var(--cor-strong-red);
-  border: 1px solid #535151;
-  border-radius: 15px;
-}
-
-.div-texto {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-self: center;
-  height: 500px;
-  width: 650px;
-  background-color: var(--cor-papiro);
-  border: 1px solid #808080;
-  border-radius: 15px;
-  box-sizing: border-box;
-  padding: 18px;
-}
-
-.div-mundo img {
-  width: 400px;
-  height: 250px;
-  border-radius: 15px;
-}
-
-.div-mundo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: center;
-  height: 500px;
-  width: 400px;
-  background-color: var(--cor-papiro);
-  border: 1px solid #808080;
-  border-radius: 15px;
-}
-
-.div-mundo p {
-  max-width: 70%;
-  text-align: justify;
-}
-
-.centro {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #D8D0BE;
-  height: 10px;
-}
-
-.div-titulo {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 500px;
-  width: 450px;
-}
-
-.div-titulo h1 {
-  max-width: 80%;
-  text-align: center;
-}
-
-.div-titulo img {
-  height: 300px;
-  width: 400px;
-  border-radius: 15px;
-}
-
-.div-texto p {
-  padding: 5px;
-  object-fit: center;
-  align-items: center;
-  align-self: center;
-  max-width: 75%;
-  max-height: 70%;
-  text-align: justify;
-}
-
-.div-texto h3 {
-  padding: 5px;
-  object-fit: center;
-  align-items: center;
-  align-self: center;
-  max-width: 75%;
-  text-align: justify;
-}
-
-.historia-pessoal {
-  min-height: 650px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: var(--cor-papiro);
-  gap: 30px;
-}
-
-.div-historia {
-  width: 500px;
-  background-color: var(--cor-aco-escuro);
-  border: 1px solid var(--cor-vermelho-batalha);
-  border-radius: 15px;
-  padding: 25px;
-  text-align: justify;
-}
-
-.div-historia h2 {
-  text-align: center;
-}
-
-.div-historia p {
-  line-height: 1.2;
-  text-align: center;
-  font-weight: 400;
-}
-
-
-.jornada {
-  min-height: 650px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--cor-strong-red);
-  color: var(--cor-papiro);
-  clip-path: polygon(0 0,
-      92% 0,
-      100% 8%,
-      100% 100%,
-      8% 100%,
-      0 92%);
-}
-
-.jornada h1 {
-  margin-bottom: 40px;
-}
-
-.cards-jornada {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 25px;
-  width: 90%;
-}
-
-.card-jornada {
-  width: 400px;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--cor-papiro);
-  color: var(--cor-fundo);
-  border-radius: 15px;
-  padding: 20px;
-  text-align: justify;
-}
-
-.card-jornada h2 {
-  text-align: center;
-}
-
-.reflexao {
-  min-height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--cor-papiro);
-}
-
-.reflexao-texto {
-  width: 700px;
-  text-align: center;
-  border-left: 4px solid var(--cor-vermelho-batalha);
-  padding-left: 30px;
-}
-
-.reflexao-texto p {
-  line-height: 1.7;
-}
-
-
-.valores {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: var(--cor-aco-escuro);
-  color: var(--cor-papiro);
-
-  padding: 80px 0;
-}
-
-
-.valores h1 {
-  text-align: center;
-}
-
-.subtitulo-valores {
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.cards-valores {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  margin-top: 50px;
-}
-
-.valor-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  max-width: 80%;
-  justify-content: space-around;
-}
-
-.valor-container.inverter {
-  flex-direction: row-reverse;
-  max-width: 80%;
-  justify-content: space-around;
-}
-
-.imagem-valor {
-  width: 45%;
-  height: 300px;
-  overflow: hidden;
-
-  clip-path: polygon(0 0,
-      80% 0,
-      100% 15%,
-      100% 90%,
-      50% 100%,
-      0 85%);
-}
-
-.imagem-valor img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-valor {
-  width: 55%;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: var(--cor-papiro);
-  color: var(--cor-fundo);
-
-  padding: 25px;
-
-  clip-path: polygon(0 0,
-      80% 0,
-      100% 15%,
-      100% 90%,
-      50% 100%,
-      0 85%);
-}
-
-.o-que-levo {
-  min-height: 650px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--cor-papiro);
-}
-
-.div-texto-levo {
-  width: 750px;
-  text-align: justify;
-  padding: 30px;
-  border: 1px solid var(--cor-vermelho-batalha);
-  border-radius: 15px;
-}
-
-.div-texto-levo h1 {
-  text-align: center;
-}
-
-.div-texto-levo p {
-  line-height: 1.7;
-}
-
-.alem-muralhas {
-  min-height: 650px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--cor-strong-red);
-  padding: 60px 0;
-  clip-path: polygon(0 0,
-      90% 0,
-      100% 10%,
-      100% 100%,
-      10% 100%,
-      0 90%);
-}
-
-.alem-muralhas .div-texto {
-  min-height: 450px;
-  padding: 20px;
-  justify-content: center;
-}
-
-.alem-muralhas .div-texto h1 {
-  text-align: center;
-}
-
-/* =========================
-   CARROSSEL DOS NOVE TITÃS
-========================= */
-
-.secao-titas {
-  width: 100%;
-  min-height: 650px;
-
-  padding: 80px 0;
-
-  background-color: var(--cor-aco-escuro);
-  color: var(--cor-papiro);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  overflow: hidden;
-}
-
-
-/* TÍTULO */
-
-.titulo-titas {
-  width: 80%;
-
-  text-align: center;
-
-  margin-bottom: 50px;
-}
-
-
-.titulo-titas h1 {
-  font-size: 38px;
-
-  margin: 0 0 15px 0;
-}
-
-
-.titulo-titas p {
-  max-width: 650px;
-
-  margin: auto;
-
-  line-height: 1.6;
-}
-
-
-/* CONTAINER DO CARROSSEL */
-
-.carrossel-container {
-  width: 92%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 20px;
-}
-
-
-/* ÁREA VISÍVEL */
-
-.carrossel-viewport {
-  width: 100%;
-
-  overflow: hidden;
-
-  padding: 20px 0;
-}
-
-
-/* LISTA DOS TITÃS */
-
-.carrossel-titas {
-  display: flex;
-
-  gap: 25px;
-
-  transition: transform 0.6s ease;
-}
-
-
-/* CARD */
-
-.card-tita {
-  min-width: 300px;
-  height: 420px;
-
-  background-color: var(--cor-papiro);
-  color: var(--cor-fundo);
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    opacity 0.4s ease;
-
-  clip-path: polygon(0 0,
-      88% 0,
-      100% 10%,
-      100% 100%,
-      12% 100%,
-      0 90%);
-}
-
-
-/* HOVER */
-
-.card-tita:hover {
-  transform: translateY(-12px) scale(1.02);
-
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-
-/* IMAGEM */
-
-.imagem-tita {
-  width: 100%;
-  height: 310px;
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-
-.imagem-tita img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.5s ease;
-}
-
-
-.card-tita:hover .imagem-tita img {
-  transform: scale(1.1);
-}
-
-
-/* OVERLAY */
-
-.overlay-tita {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0, 0, 0, 0.65);
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-
-  transition: opacity 0.4s ease;
-}
-
-
-.card-tita:hover .overlay-tita {
-  opacity: 1;
-}
-
-
-.overlay-tita span {
-  color: var(--cor-papiro);
-
-  border: 1px solid var(--cor-vermelho-batalha);
-
-  padding: 12px 18px;
-
-  font-size: 14px;
-
-  letter-spacing: 1px;
-}
-
-
-/* CONTEÚDO */
-
-.conteudo-card-tita {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  padding: 15px;
-}
-
-
-.conteudo-card-tita h2 {
-  margin: 0 0 8px 0;
-
-  color: var(--cor-strong-red);
-
-  font-size: 22px;
-}
-
-
-/* SENTIMENTO */
-
-.sentimento-tita {
-  margin: 0;
-
-  font-size: 12px;
-
-  font-weight: bold;
-
-  letter-spacing: 2px;
-
-  color: var(-);
-}
-
-
-/* BOTÕES */
-
-.carrossel-btn {
-  width: 55px;
-  height: 55px;
-
-  min-width: 55px;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  background-color: var(--cor-strong-red);
-
-  color: var(--cor-papiro);
-
-  border: 1px solid var(--cor-papiro);
-
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  font-size: 24px;
-
-  transition: all 0.3s ease;
-}
-
-
-.carrossel-btn:hover {
-  background-color: var(--cor-vermelho-batalha);
-
-  transform: scale(1.1);
-}
-
-
-/* INDICADORES */
-
-.indicadores-carrossel {
-  display: flex;
-
-  gap: 10px;
-
-  margin-top: 30px;
-}
-
-
-.indicador {
-  width: 9px;
-  height: 9px;
-
-  background-color: var(--cor-papiro);
-
-  opacity: 0.4;
-
-  border-radius: 50%;
-
-  transition: all 0.3s ease;
-
-  cursor: pointer;
-}
-
-
-.indicador.ativo {
-  opacity: 1;
-
-  background-color: var(--cor-strong-red);
-
-  transform: scale(1.4);
-}
-
-
-/* INSTRUÇÃO */
-
-.instrucao-titas {
-  margin-top: 25px;
-
-  font-size: 14px;
-
-  opacity: 0.8;
-
-  text-align: center;
-}
-
-.carrossel-btn:hover {
-  background-color: var(--cor-vermelho-batalha);
-
-  transform: scale(1.1);
-}
-
-/* =========================
-       MODAL DOS TITÃS
-========================= */
-
-/* FUNDO ESCURO */
-
-.modal-tita {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  background-color: rgba(0, 0, 0, 0.80);
-
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999;
-}
-
-
-/* CAIXA PRINCIPAL */
-
-.conteudo-modal-tita {
-  width: 1000px;
-  height: 650px;
-
-  max-width: 90%;
-  max-height: 85vh;
-
-  display: flex;
-
-  position: relative;
-
-  overflow: hidden;
-
-  background-color: var(--cor-papiro);
-
-  color: var(--cor-fundo);
-
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-
-  clip-path: polygon(0 0,
-      96% 0,
-      100% 6%,
-      100% 100%,
-      4% 100%,
-      0 94%);
-}
-
-
-/* =========================
-        LADO DA IMAGEM
-========================= */
-
-.modal-imagem {
-  width: 50%;
-  height: 100%;
-
-  flex-shrink: 0;
-
-  overflow: hidden;
-}
-
-
-.modal-imagem img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-
 /* =========================
      LADO DAS INFORMAÇÕES
 ========================= */
@@ -2313,6 +1311,361 @@ input {
   transform: scale(1.2);
 }
 
+/* ==========================================
+          CUSCUZ ESPORTS - SOBRE
+========================================== */
+
+
+.secao-sobre {
+  position: relative;
+  width: 100%;
+  padding: 85px 6% 55px;
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg,
+      #000000 0%,
+      #101010 55%,
+      var(--cor-grafite) 100%);
+
+  color: var(--cor-branco);
+  font-family: var(--fonte-texto);
+  overflow: hidden;
+}
+
+
+/* CONTAINER PRINCIPAL */
+
+.container-sobre {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+
+/* CABEÇALHO DA SEÇÃO */
+
+.cabecalho-sobre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+
+/* IDENTIFICADOR DA SEÇÃO */
+
+.identificador-sobre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: var(--fonte-subtitulo);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: var(--cor-laranja);
+}
+
+
+/* LINHA DECORATIVA */
+
+.linha-sobre {
+  display: block;
+  width: 35px;
+  height: 3px;
+  flex-shrink: 0;
+
+  background-color: var(--cor-laranja);
+  transform: skewX(-30deg);
+}
+
+
+/* ANO DE FUNDAÇÃO */
+
+.fundacao-sobre {
+  font-family: var(--fonte-subtitulo);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #999999;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo-sobre {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 65px;
+}
+
+
+/* TEXTO DA HISTÓRIA */
+
+.texto-sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.texto-sobre h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(30px, 3.6vw, 58px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 1px;
+
+  color: var(--cor-branco);
+  margin: 0 0 30px;
+}
+
+.texto-sobre h2 span {
+  color: var(--cor-laranja);
+}
+
+
+/* PARÁGRAFOS */
+
+.texto-sobre p {
+  font-family: var(--fonte-texto);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: #CCCCCC;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+
+/* SLOGAN INSTITUCIONAL */
+
+.slogan-sobre {
+  display: block;
+  margin-top: 10px;
+  padding-left: 15px;
+
+  border-left: 3px solid var(--cor-laranja);
+
+  font-family: var(--fonte-subtitulo);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  color: var(--cor-laranja);
+}
+
+
+/* IMAGEM DA COMUNIDADE */
+
+.imagem-sobre {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  isolation: isolate;
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+
+/* MOLDURA DIAGONAL */
+
+.imagem-sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--cor-laranja);
+
+  clip-path: polygon(5% 0,
+      100% 0,
+      100% 95%,
+      95% 100%,
+      0 100%,
+      0 5%);
+
+  z-index: -1;
+}
+
+
+/* IMAGEM PRINCIPAL */
+
+.imagem-sobre img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  clip-path: polygon(5% 0,
+      100% 0,
+      100% 95%,
+      95% 100%,
+      0 100%,
+      0 5%);
+}
+
+
+/* DESTAQUES INSTITUCIONAIS */
+
+.destaques-sobre {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-top: 55px;
+  padding-top: 35px;
+
+  border-top: 1px solid #383838;
+  box-sizing: border-box;
+}
+
+
+/* DESTAQUE INDIVIDUAL */
+
+.destaque-sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.destaque-sobre:not(:last-child) {
+  border-right: 1px solid #383838;
+}
+
+
+/* INDICADORES */
+
+.destaque-sobre h3 {
+  font-family: var(--fonte-indicadores);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1;
+
+  color: var(--cor-laranja);
+  margin: 0;
+}
+
+
+/* LEGENDAS DOS INDICADORES */
+
+.destaque-sobre span {
+  font-family: var(--fonte-subtitulo);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #CCCCCC;
+}
+
+
+/* ==========================================
+              RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1024px) {
+
+  .secao-sobre {
+    padding: 65px 5% 45px;
+  }
+
+  .conteudo-sobre {
+    gap: 35px;
+  }
+
+  .texto-sobre p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .secao-sobre {
+    padding: 50px 6% 40px;
+  }
+
+  .cabecalho-sobre {
+    margin-bottom: 30px;
+  }
+
+  .conteudo-sobre {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .texto-sobre h2 {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+
+  .imagem-sobre {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .destaques-sobre {
+    margin-top: 40px;
+    padding-top: 25px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .cabecalho-sobre {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .identificador-sobre {
+    font-size: 10px;
+    letter-spacing: 1px;
+    gap: 8px;
+  }
+
+  .linha-sobre {
+    width: 20px;
+  }
+
+  .fundacao-sobre {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .texto-sobre p {
+    font-size: 13px;
+  }
+
+  .slogan-sobre {
+    font-size: 12px;
+  }
+
+  .destaque-sobre h3 {
+    font-size: 36px;
+  }
+
+  .destaque-sobre span {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+}
+
 
 /* ==========================================
         CUSCUZ ESPORTS - LIDERANÇA
@@ -2325,7 +1678,7 @@ input {
 
   width: 100%;
   min-height: 650px;
-  padding: 80px 4%;
+  padding: 30px 4% 60px;
   box-sizing: border-box;
 
   display: flex;
@@ -2333,10 +1686,11 @@ input {
   align-items: center;
   justify-content: center;
 
-  background: linear-gradient(135deg,
-      #FFCF80 0%,
-      var(--cor-lideres-laranja) 55%,
-      #D95A00 100%);
+  background-color: var(--cor-lideres-laranja);
+  background-image: url('../assets/imgs/fundo-lideres.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   color: var(--cor-lideres-preto);
   font-family: 'Barlow', sans-serif;
@@ -2349,16 +1703,13 @@ input {
 
 .cabecalho-lideres {
   position: relative;
-
   width: 100%;
-  min-height: 120px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 
@@ -2382,17 +1733,28 @@ input {
 /* TÍTULO PRINCIPAL */
 
 .cabecalho-lideres h2 {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  font-family: var(--fonte-titulo);
-  font-size: clamp(28px, 4vw, 55px);
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 2px;
+  width: 100%;
 
   margin: 0;
+  padding: 0;
 
-  z-index: 1;
+  background: none;
+  clip-path: none;
+}
+
+/* IMAGEM DO TÍTULO DOS LÍDERES */
+
+.imagem-titulo-lideres {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  margin: -35px 0;
 }
 
 
@@ -3032,4 +2394,687 @@ input {
   .container-lideres.animar-lideres .card-lider {
     animation: none;
   }
+}
+
+/* RESPONSIVIDADE DO TÍTULO DOS LÍDERES */
+
+@media (max-width: 768px) {
+
+  .imagem-titulo-lideres {
+    max-width: 90%;
+  }
+
+  .cabecalho-lideres {
+    margin-bottom: 35px;
+  }
+
+}
+
+/* ==========================================
+       CUSCUZ ESPORTS - NOSSA IDENTIDADE
+========================================== */
+
+/* ==========================================
+       CUSCUZ ESPORTS - NOSSA IDENTIDADE
+========================================== */
+
+.secao-identidade {
+    width: 100%;
+    padding: 90px 6% 60px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        145deg,
+        #080808 0%,
+        #101216 50%,
+        #080808 100%
+    );
+
+    color: var(--cor-branco);
+    font-family: var(--fonte-texto);
+
+    overflow: hidden;
+    scroll-margin-top: var(--tamanho-header);
+}
+
+/* CONTAINER PRINCIPAL */
+
+.container-identidade {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO DA SEÇÃO */
+
+.cabecalho-identidade {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+/* ETIQUETA SUPERIOR */
+
+.cabecalho-identidade > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--cor-laranja);
+}
+
+/* LINHAS DECORATIVAS */
+
+.cabecalho-identidade > span::before,
+.cabecalho-identidade > span::after {
+    content: "";
+
+    width: 30px;
+    height: 3px;
+
+    background-color: var(--cor-laranja);
+    transform: skewX(-30deg);
+}
+
+/* TÍTULO PRINCIPAL */
+
+.cabecalho-identidade h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(38px, 5vw, 72px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.15;
+
+    color: var(--cor-branco);
+
+    margin: 15px 0;
+}
+
+/* SUBTÍTULO */
+
+.cabecalho-identidade p {
+    font-family: var(--fonte-subtitulo);
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #AAAAAA;
+
+    margin: 0;
+}
+
+/* ==========================================
+           BLOCOS - LOGO E JERSEY
+========================================== */
+
+.identidade-bloco {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    align-items: center;
+    gap: 60px;
+
+    margin-bottom: 80px;
+}
+
+/* INVERSÃO DO BLOCO DA JERSEY */
+
+.identidade-invertido {
+    grid-template-columns: 1fr 1.3fr;
+}
+
+.identidade-invertido .identidade-imagem {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.identidade-invertido .identidade-conteudo {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* CONTAINER DAS IMAGENS */
+
+.identidade-imagem {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background-color: #080808;
+    border-bottom: 3px solid var(--cor-laranja);
+}
+
+/* FOTOGRAFIAS */
+
+.identidade-imagem img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.6s ease,
+                filter 0.6s ease;
+}
+
+/* EFEITO DE APROXIMAÇÃO */
+
+.identidade-imagem:hover img {
+    transform: scale(1.035);
+    filter: brightness(1.05);
+}
+
+/* DETALHE LARANJA SUPERIOR */
+
+.identidade-imagem::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 65px;
+    height: 4px;
+
+    background-color: var(--cor-laranja);
+
+    pointer-events: none;
+}
+
+/* ==========================================
+             CONTEÚDO TEXTUAL
+========================================== */
+
+.identidade-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+/* ETIQUETAS */
+
+.identidade-etiqueta {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--cor-laranja);
+}
+
+/* TÍTULOS */
+
+.identidade-conteudo h3 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(28px, 3.2vw, 52px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1px;
+
+    color: var(--cor-branco);
+
+    margin: 20px 0 25px;
+}
+
+/* PALAVRAS EM DESTAQUE */
+
+.identidade-conteudo h3 span {
+    color: var(--cor-laranja);
+}
+
+/* PARÁGRAFOS */
+
+.identidade-conteudo p {
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #CCCCCC;
+
+    margin: 0 0 20px;
+}
+
+/* FRASES INSTITUCIONAIS */
+
+.identidade-conteudo .identidade-frase {
+    padding-left: 15px;
+
+    border-left: 3px solid var(--cor-laranja);
+
+    font-family: var(--fonte-subtitulo);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.7;
+
+    color: var(--cor-branco);
+
+    margin: 5px 0 0;
+}
+
+/* ==========================================
+           MISSÃO, VALORES E META
+========================================== */
+
+.identidade-pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding: 45px 0 70px;
+
+    border-top: 1px solid #333333;
+}
+
+/* CARD INDIVIDUAL */
+
+.card-pilar {
+    position: relative;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #1B1B1B,
+        #101010
+    );
+
+    border: 1px solid #303030;
+    border-top: 3px solid var(--cor-laranja);
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* EFEITO HOVER */
+
+.card-pilar:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-laranja);
+}
+
+/* NUMERAÇÃO DOS CARDS */
+
+.pilar-numero {
+    display: block;
+
+    font-family: var(--fonte-indicadores);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+
+    color: var(--cor-laranja);
+}
+
+/* TÍTULO DOS CARDS */
+
+.card-pilar h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    color: var(--cor-branco);
+
+    margin: 10px 0 20px;
+}
+
+/* DESCRIÇÃO DOS CARDS */
+
+.card-pilar p {
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #CCCCCC;
+
+    margin: 0;
+}
+
+/* ==========================================
+           MISSÃO, VALORES E META
+========================================== */
+
+.identidade-pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding: 45px 0 70px;
+
+    border-top: 1px solid #333333;
+}
+
+/* CARD INDIVIDUAL */
+
+.card-pilar {
+    position: relative;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #1B1B1B,
+        #101010
+    );
+
+    border: 1px solid #303030;
+    border-top: 3px solid var(--cor-laranja);
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* EFEITO HOVER */
+
+.card-pilar:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-laranja);
+}
+
+/* NUMERAÇÃO DOS CARDS */
+
+.pilar-numero {
+    display: block;
+
+    font-family: var(--fonte-indicadores);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+
+    color: var(--cor-laranja);
+}
+
+/* TÍTULO DOS CARDS */
+
+.card-pilar h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    color: var(--cor-branco);
+
+    margin: 10px 0 20px;
+}
+
+/* DESCRIÇÃO DOS CARDS */
+
+.card-pilar p {
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #CCCCCC;
+
+    margin: 0;
+}
+
+/* ==========================================
+           CHAMADA PARA O RANKING
+========================================== */
+
+.identidade-ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 65px 5% 30px;
+
+    border-top: 1px solid #333333;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.identidade-ranking h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(32px, 4.5vw, 65px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+
+    color: var(--cor-branco);
+
+    margin: 20px 0;
+}
+
+.identidade-ranking h2 span {
+    color: var(--cor-laranja);
+}
+
+/* DESCRIÇÃO */
+
+.identidade-ranking p {
+    max-width: 650px;
+
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #BBBBBB;
+
+    margin: 0 0 35px;
+}
+
+/* ==========================================
+              BOTÃO DO RANKING
+========================================== */
+
+.botao-ranking {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 55px;
+    padding: 10px 35px;
+    box-sizing: border-box;
+
+    font-family: var(--fonte-subtitulo);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    color: var(--cor-preto);
+    text-decoration: none;
+
+    isolation: isolate;
+
+    transition: color 0.3s ease;
+}
+
+/* FUNDO DIAGONAL */
+
+.botao-ranking::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--cor-laranja);
+    border: 1px solid var(--cor-laranja);
+
+    transform: skewX(-10deg);
+
+    z-index: -1;
+
+    transition: background-color 0.3s ease;
+}
+
+/* SETA */
+
+.botao-ranking svg {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+/* EFEITO HOVER */
+
+.botao-ranking:hover {
+    color: var(--cor-branco);
+}
+
+.botao-ranking:hover::before {
+    background-color: transparent;
+}
+
+.botao-ranking:hover svg {
+    transform: translateX(5px);
+}
+
+/* ACESSIBILIDADE */
+
+.botao-ranking:focus-visible {
+    outline: 2px solid var(--cor-laranja);
+    outline-offset: 6px;
+}
+
+/* ==========================================
+              RESPONSIVIDADE
+========================================== */
+
+/* NOTEBOOKS E TABLETS */
+
+@media (max-width: 1024px) {
+
+    .secao-identidade {
+        padding: 70px 5% 50px;
+    }
+
+    .identidade-bloco {
+        gap: 35px;
+        margin-bottom: 65px;
+    }
+
+    .identidade-conteudo p {
+        font-size: 14px;
+    }
+
+    .identidade-pilares {
+        gap: 15px;
+    }
+
+    .card-pilar {
+        padding: 25px;
+    }
+
+}
+
+/* TABLETS E CELULARES */
+
+@media (max-width: 768px) {
+
+    .secao-identidade {
+        padding: 55px 6% 40px;
+    }
+
+    .cabecalho-identidade {
+        margin-bottom: 40px;
+    }
+
+    .identidade-bloco,
+    .identidade-invertido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 55px;
+    }
+
+    .identidade-invertido .identidade-imagem {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .identidade-invertido .identidade-conteudo {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .identidade-pilares {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-bottom: 45px;
+    }
+
+    .identidade-ranking {
+        padding: 45px 0 20px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .secao-identidade {
+        scroll-margin-top: 115px;
+    }
+
+    .cabecalho-identidade > span {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .cabecalho-identidade p {
+        font-size: 13px;
+    }
+
+    .identidade-conteudo h3 {
+        margin: 15px 0 20px;
+    }
+
+    .identidade-conteudo p,
+    .identidade-ranking p {
+        font-size: 13px;
+    }
+
+    .pilar-numero {
+        font-size: 52px;
+    }
+
+    .botao-ranking {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+
+}
+
+/* ACESSIBILIDADE - REDUÇÃO DE MOVIMENTOS */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .secao-identidade *,
+    .secao-identidade *::before,
+    .secao-identidade *::after {
+        transition: none;
+    }
+
+    .identidade-imagem:hover img,
+    .card-pilar:hover,
+    .botao-ranking:hover svg {
+        transform: none;
+    }
+
 }
