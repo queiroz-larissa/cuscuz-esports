@@ -17,7 +17,7 @@
 
 <body>
 
-  
+
   <!-- =====================================
                 HEADER
   ===================================== -->
@@ -64,16 +64,8 @@
 
       <a href="./login.html" class="botao-login-header">
 
-        <svg class="icone-login"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <svg class="icone-login" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
           aria-hidden="true">
 
           <circle cx="12" cy="8" r="4"></circle>
@@ -90,32 +82,52 @@
   </header>
 
 
-
   <!-- BANNER PRINCIPAL -->
-  <div class="banner">
 
-    <div class="text">
-      <br>
-      <br>
-      <br>
-      <h1>Cuscuz Esports</h1>
+  <section class="banner" id="inicio">
 
-      <h3>
-        Uma história construída por pessoas, amizades e competição.
-        Conheça o Cuscuz Esports e acompanhe nossa trajetória
-        no cenário de PUBG Mobile.
-      </h3>
+    <!-- Vídeo de fundo -->
 
-      <br>
-      <br>
+    <video class="banner-video" autoplay muted loop playsinline>
+      <source src="./assets/videos/abertura.mp4" type="video/mp4">
+    </video>
 
-      <a href="#historia-anime">
-        <button>Explorar a história</button>
+    <!-- Camada de escurecimento -->
+
+    <div class="banner-overlay"></div>
+
+    <!-- Conteúdo central -->
+
+    <div class="banner-conteudo">
+
+      <h1 class="banner-titulo">
+
+        <img class="banner-nos-somos" src="./assets/imgs/nos-somos.png" alt="Nós somos">
+
+        <img class="banner-cuscuz" src="./assets/imgs/cuscuz-wordmark.png" alt="Cuscuz">
+
+      </h1>
+
+      <p class="banner-subtitulo">
+        PUBG MOBILE - ESPORTS
+      </p>
+
+      <!-- Botão de navegação -->
+
+      <a href="#historia-anime" class="banner-botao" aria-label="Ir para a próxima seção">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+          <path d="M6 9l6 6 6-6" />
+
+        </svg>
+
       </a>
 
     </div>
 
-  </div>
+  </section>
   <br>
   <br>
 
