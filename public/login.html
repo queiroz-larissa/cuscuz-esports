@@ -6,153 +6,282 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Login</title>
+    <title>Cuscuz Esports | Login</title>
 
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="./assets/imgs/logo.png">
 </head>
 
 <body>
 
-    <!--Header-->
+    <!-- HEADER -->
 
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+    <header class="header">
+        <div class="container-header">
+
+            <a href="./index.html" class="logo-header">
+                <img src="./assets/imgs/logo.png" alt="Cuscuz Esports">
+            </a>
+
+            <nav class="navegacao-header">
+                <ul class="menu-header">
+
+                    <li>
+                        <a href="./index.html">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="./ranking.html">RANKING</a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#sobre">SOBRE</a>
+                    </li>
+
+                    <li>
+                        <a href="./login.html" class="ativo" aria-current="page">
+                            LOGIN
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
         </div>
-    </div>
+    </header>
 
 
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card card-login">
-                <h2>Olá de volta!</h2>
-                <div class="formulario">
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
-                    </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
-                    </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+    <!-- LOGIN -->
+
+    <main class="pagina-login">
+
+        <div class="container-login">
+
+            <div class="card-login">
+
+                <div class="identidade-login">
+
+                    <img src="./assets/imgs/logo.png" alt="Cuscuz Esports" class="logo-login">
+
+                    <span class="subtitulo-login">
+                        ÁREA ADMINISTRATIVA
+                    </span>
+
+                    <h1>BEM-VINDO DE VOLTA!</h1>
+
+                    <p>
+                        Acesse o painel de gerenciamento
+                        do Cuscuz Esports.
+                    </p>
+
                 </div>
 
+
+                <!-- FORMULÁRIO -->
+
+                <div class="formulario-login">
+
+                    <div class="campo-login">
+
+                        <label for="email_input">E-mail</label>
+
+                        <input id="email_input" type="email" placeholder="Digite seu e-mail" autocomplete="email">
+
+                    </div>
+
+                    <div class="campo-login">
+
+                        <label for="senha_input">Senha</label>
+
+                        <input id="senha_input" type="password" placeholder="Digite sua senha"
+                            autocomplete="current-password">
+
+                    </div>
+
+                    <button class="botao-login" onclick="entrar()">
+                        ACESSAR PAINEL
+                    </button>
+
+                </div>
+
+
+                <!-- MENSAGENS DE ERRO -->
+
+                <div class="card-erro-login" id="cardErro" role="alert">
+                    <span id="mensagem_erro"></span>
+                </div>
+
+
+                <!-- CARREGAMENTO -->
+
                 <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                    <img src="./assets/circle-loading.gif" id="loading-gif" alt="Carregando">
                 </div>
 
                 <div id="div_erros_login"></div>
-            </div>
-        </div>
-    </div>
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
+
+                <!-- INFORMAÇÕES COMPLEMENTARES -->
+
+                <div class="informacoes-login">
+
+                    <p>Acesso exclusivo aos administradores.</p>
+
+                    <a href="./index.html">
+                        ← Voltar para a Home
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-    </div>
-    <!--footer fim-->
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer footer-login">
+
+        <div class="container-footer-login">
+
+            <p>© 2026 Cuscuz Esports. Todos os direitos reservados.</p>
+
+            <span>|</span>
+
+            <p>Projeto Individual — SPTech</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        function entrar() {
+
+            var emailVar = email_input.value.trim();
+            var senhaVar = senha_input.value;
+
+            cardErro.style.display = "none";
+
+            // VALIDAÇÃO DOS CAMPOS OBRIGATÓRIOS
+
+            if (emailVar == "" || senhaVar == "") {
+
+                exibirErro("Preencha todos os campos.");
+
+                return false;
+            }
+
+
+            // VALIDAÇÃO DO E-MAIL
+
+            if (
+                emailVar.indexOf("@") <= 0 ||
+                emailVar.indexOf(".",
+                    emailVar.indexOf("@") + 2) == -1 ||
+                !email_input.checkValidity()
+            ) {
+
+                exibirErro("Informe um e-mail válido.");
+
+                return false;
+            }
+
+
+            // INICIAR CARREGAMENTO
+
+            aguardar();
+
+            document.querySelector(".botao-login").disabled = true;
+
+
+            // ENVIAR DADOS PARA A API
+
+            fetch("/usuarios/autenticar", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+
+                })
+
+            }).then(function (resposta) {
+
+                if (resposta.ok) {
+
+                    return resposta.json().then(function (json) {
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id_usuario;
+
+                        setTimeout(function () {
+
+                            window.location = "./painel.html";
+
+                        }, 1000);
+
+                    });
+
+                } else {
+
+                    if (resposta.status == 401 ||
+                        resposta.status == 403) {
+
+                        exibirErro("E-mail ou senha incorretos.");
+
+                    } else {
+
+                        exibirErro("Não foi possível realizar o login.");
+
+                    }
+
+                    finalizarAguardar();
+
+                    document.querySelector(".botao-login").disabled = false;
+
+                }
+
+            }).catch(function (erro) {
+
+                console.log(erro);
+
+                exibirErro("Erro de conexão com o servidor.");
+
+                finalizarAguardar();
+
+                document.querySelector(".botao-login").disabled = false;
+
+            });
+
+            return false;
+
+        }
+
+
+        // EXIBIR MENSAGEM DE ERRO
+
+        function exibirErro(mensagem) {
+
+            cardErro.style.display = "block";
+
+            mensagem_erro.innerText = mensagem;
+
+        }
+
+    </script>
 
 </body>
 
 </html>
-
-<script>
-
-
-    function entrar() {
-        aguardar();
-
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
-</script>

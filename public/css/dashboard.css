@@ -1,0 +1,845 @@
+/* ==========================================
+   CUSCUZ ESPORTS - DASHBOARD RANKING
+========================================== */
+
+/* ==========================================
+   ESTRUTURA PRINCIPAL
+========================================== */
+
+.pagina-ranking {
+    width: 100%;
+    min-height: 80vh;
+    padding: 50px 6%;
+    box-sizing: border-box;
+
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+
+    font-family: var(--fonte-texto);
+}
+
+/* ==========================================
+   TIPOGRAFIA
+========================================== */
+
+.pagina-ranking h1 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+}
+
+.pagina-ranking h2 {
+    font-family: var(--fonte-subtitulo);
+    font-weight: 700;
+}
+
+.pagina-ranking h3 {
+    font-family: var(--fonte-subtitulo);
+    font-weight: 600;
+}
+
+.pagina-ranking button,
+.pagina-ranking select {
+    font-family: var(--fonte-subtitulo);
+}
+
+/* ==========================================
+   CABEÇALHO DO RANKING
+========================================== */
+
+.cabecalho-ranking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #333333;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.titulo-ranking {
+    border-left: 5px solid #FF7B01;
+    padding-left: 18px;
+}
+
+.titulo-ranking h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.titulo-ranking p {
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    color: #B5B5B5;
+    margin: 8px 0 0;
+}
+
+/* ==========================================
+   FILTRO DE CAMPEONATOS
+========================================== */
+
+.filtro-campeonato {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 280px;
+}
+
+.filtro-campeonato label {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #FF7B01;
+}
+
+.filtro-campeonato select {
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box;
+
+    background-color: #171717;
+    color: #FFFFFF;
+
+    border: 1px solid #FF7B01;
+    border-radius: 5px;
+
+    font-family: var(--fonte-subtitulo);
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro-campeonato select:hover {
+    background-color: #242424;
+}
+
+.filtro-campeonato select:focus {
+    outline: 2px solid #FF7B01;
+    outline-offset: 3px;
+}
+
+.filtro-campeonato select option {
+    background-color: #171717;
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   INDICADORES DO CAMPEONATO - KPIs
+========================================== */
+
+.indicadores-ranking {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+/* ESTRUTURA COMPARTILHADA DOS CARDS */
+
+.kpi-ranking {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 280px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    background-color: #171717;
+
+    border: 1px solid #333333;
+    border-top: 3px solid #FF7B01;
+    border-radius: 8px;
+}
+
+/* TÍTULOS DOS CARDS */
+
+.titulo-kpi {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #333333;
+}
+
+.titulo-kpi h2 {
+    font-family: var(--fonte-subtitulo);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.titulo-kpi i {
+    font-size: 22px;
+    color: #FF7B01;
+}
+
+/* PRESERVAR CARROSSÉIS OCULTOS */
+
+.pagina-ranking [hidden] {
+    display: none !important;
+}
+
+/* ==========================================
+   KPI 01 - CAMPEÃO
+========================================== */
+
+.conteudo-campeao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 20px;
+}
+
+/* INTEGRANTES DA EQUIPE CAMPEÃ */
+
+.integrantes-campeao {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.integrante-campeao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.integrante-campeao img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+
+    border: 2px solid #FF7B01;
+    border-radius: 50%;
+
+    background-color: #242424;
+}
+
+.integrante-campeao span {
+    font-family: var(--fonte-texto);
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* PONTUAÇÃO TOTAL DO CAMPEÃO */
+
+.pontuacao-campeao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pontuacao-campeao span {
+    font-family: var(--fonte-indicadores);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    color: #FF7B01;
+}
+
+.pontuacao-campeao p {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #B5B5B5;
+    margin: 5px 0 0;
+}
+
+/* ==========================================
+   KPI 02 - MVP
+========================================== */
+
+.conteudo-mvp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 24px;
+}
+
+/* FOTO DO MVP */
+
+.foto-mvp {
+    width: 120px;
+    height: 140px;
+    flex-shrink: 0;
+
+    background-color: #242424;
+
+    border: 2px solid #FF7B01;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.foto-mvp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFORMAÇÕES DO MVP */
+
+.informacoes-mvp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.informacoes-mvp h3 {
+    font-family: var(--fonte-subtitulo);
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+/* QUANTIDADE DE ABATES */
+
+.pontuacao-mvp {
+    display: flex;
+    flex-direction: column;
+}
+
+.pontuacao-mvp span {
+    font-family: var(--fonte-indicadores);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    color: #FF7B01;
+}
+
+.pontuacao-mvp p {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #B5B5B5;
+    margin: 5px 0 0;
+}
+
+.descricao-mvp {
+    font-family: var(--fonte-texto);
+    font-size: 11px;
+    color: #B5B5B5;
+    margin: 0;
+}
+
+/* ==========================================
+   KPI 03 - PARTICIPANTES
+========================================== */
+
+.conteudo-participantes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 12px;
+    text-align: center;
+}
+
+/* ÍCONE DE PARTICIPANTES */
+
+.icone-participantes {
+    font-size: 42px;
+    color: #FF7B01;
+}
+
+/* QUANTIDADE DE JOGADORES */
+
+.quantidade-participantes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantidade-participantes span {
+    font-family: var(--fonte-indicadores);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    color: #FF7B01;
+}
+
+.quantidade-participantes p {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #B5B5B5;
+    margin: 5px 0 0;
+}
+
+/* DESCRIÇÃO DO INDICADOR */
+
+.descricao-participantes {
+    font-family: var(--fonte-texto);
+    font-size: 11px;
+    line-height: 1.5;
+    color: #B5B5B5;
+    max-width: 200px;
+    margin: 0;
+}
+
+/* ==========================================
+   CARROSSÉIS - CAMPEÃO E MVP
+========================================== */
+
+.navegacao-carrossel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #333333;
+}
+
+/* BOTÕES DE NAVEGAÇÃO */
+
+.navegacao-carrossel button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: transparent;
+    color: #FF7B01;
+
+    border: 1px solid #FF7B01;
+    border-radius: 4px;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navegacao-carrossel button:hover {
+    background-color: #FF7B01;
+    color: #000000;
+}
+
+.navegacao-carrossel button:focus-visible {
+    outline: 2px solid #FF7B01;
+    outline-offset: 3px;
+}
+
+/* CONTADOR DO CARROSSEL */
+
+.navegacao-carrossel span {
+    font-family: var(--fonte-subtitulo);
+    font-size: 12px;
+    font-weight: 600;
+    color: #B5B5B5;
+}
+
+/* ==========================================
+   CLASSIFICAÇÃO GERAL
+========================================== */
+
+.classificacao-ranking {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* TÍTULO DA CLASSIFICAÇÃO */
+
+.titulo-classificacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.titulo-classificacao h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.titulo-classificacao i {
+    font-size: 26px;
+    color: #FF7B01;
+}
+
+/* CONTAINER DA TABELA */
+
+.container-tabela-ranking {
+    width: 100%;
+    overflow-x: auto;
+
+    background-color: #171717;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+/* ESTRUTURA DA TABELA */
+
+.tabela-ranking {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+}
+
+/* CABEÇALHO DA TABELA */
+
+.tabela-ranking thead {
+    background-color: #FF7B01;
+    color: #000000;
+}
+
+.tabela-ranking th {
+    padding: 18px 16px;
+
+    font-family: var(--fonte-subtitulo);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+/* CORPO DA TABELA */
+
+.tabela-ranking td {
+    padding: 18px 16px;
+
+    color: #FFFFFF;
+    font-weight: 500;
+    text-align: center;
+
+    border-bottom: 1px solid #333333;
+}
+
+/* ALTERNÂNCIA DE CORES DAS LINHAS */
+
+.tabela-ranking tbody tr:nth-child(even) {
+    background-color: #101010;
+}
+
+.tabela-ranking tbody tr:hover {
+    background-color: #242424;
+}
+
+.tabela-ranking tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* COLUNA DE POSIÇÃO */
+
+.tabela-ranking th:nth-child(1),
+.tabela-ranking td:nth-child(1) {
+    width: 8%;
+}
+
+/* COLUNA DE INTEGRANTES */
+
+.tabela-ranking th:nth-child(2),
+.tabela-ranking td:nth-child(2) {
+    width: 48%;
+    text-align: left;
+}
+
+/* COLUNAS NUMÉRICAS */
+
+.tabela-ranking th:nth-child(n+3),
+.tabela-ranking td:nth-child(n+3) {
+    width: 11%;
+}
+
+/* DESTAQUE DOS PONTOS TOTAIS */
+
+.tabela-ranking td:nth-child(6) {
+    font-family: var(--fonte-indicadores);
+    font-size: 26px;
+    font-weight: 600;
+    color: #FF7B01;
+}
+
+/* MENSAGEM DE AUSÊNCIA DE RESULTADOS */
+
+.tabela-ranking .mensagem-ranking {
+    padding: 50px 20px;
+    text-align: center;
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    font-weight: 400;
+    color: #B5B5B5;
+}
+
+/* ==========================================
+   DESTAQUE DAS POSIÇÕES DO RANKING
+========================================== */
+
+/* NUMERAÇÃO DAS POSIÇÕES */
+
+.tabela-ranking tbody td:first-child:not(.mensagem-ranking) {
+    font-family: var(--fonte-indicadores);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* PRIMEIRO LUGAR - OURO */
+
+.tabela-ranking .posicao-ouro {
+    background-color: rgba(255, 215, 0, 0.06);
+}
+
+.tabela-ranking .posicao-ouro td:first-child {
+    color: #FFD700;
+    border-left: 4px solid #FFD700;
+}
+
+/* SEGUNDO LUGAR - PRATA */
+
+.tabela-ranking .posicao-prata {
+    background-color: rgba(192, 192, 192, 0.06);
+}
+
+.tabela-ranking .posicao-prata td:first-child {
+    color: #C0C0C0;
+    border-left: 4px solid #C0C0C0;
+}
+
+/* TERCEIRO LUGAR - BRONZE */
+
+.tabela-ranking .posicao-bronze {
+    background-color: rgba(205, 127, 50, 0.08);
+}
+
+.tabela-ranking .posicao-bronze td:first-child {
+    color: #CD7F32;
+    border-left: 4px solid #CD7F32;
+}
+
+/* DESTAQUE AO PASSAR O MOUSE */
+
+.tabela-ranking tbody tr.posicao-ouro:hover {
+    background-color: rgba(255, 215, 0, 0.12);
+}
+
+.tabela-ranking tbody tr.posicao-prata:hover {
+    background-color: rgba(192, 192, 192, 0.12);
+}
+
+.tabela-ranking tbody tr.posicao-bronze:hover {
+    background-color: rgba(205, 127, 50, 0.15);
+}
+
+/* ==========================================
+   LEGENDA DE PONTUAÇÃO
+========================================== */
+
+.legenda-ranking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+
+    margin-top: 20px;
+    padding: 10px 0;
+
+    font-family: var(--fonte-texto);
+    font-size: 12px;
+    font-weight: 400;
+    color: #B5B5B5;
+}
+
+.legenda-ranking span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legenda-ranking strong {
+    font-family: var(--fonte-subtitulo);
+    font-weight: 700;
+    color: #FF7B01;
+}
+
+/* ==========================================
+   RESPONSIVIDADE DA DASHBOARD
+========================================== */
+
+/* TABLETS E NOTEBOOKS MENORES */
+
+@media (max-width: 1200px) {
+
+    .pagina-ranking {
+        padding: 40px 5%;
+    }
+
+    .indicadores-ranking {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .kpi-campeao {
+        grid-column: 1 / -1;
+    }
+
+    .kpi-ranking {
+        min-height: 260px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+
+    .pagina-ranking {
+        padding: 30px 4%;
+    }
+
+    .cabecalho-ranking {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .titulo-ranking h1 {
+        font-size: 38px;
+    }
+
+    .titulo-ranking p {
+        font-size: 13px;
+    }
+
+    .filtro-campeonato {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .indicadores-ranking {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .kpi-campeao {
+        grid-column: auto;
+    }
+
+    .kpi-ranking {
+        min-height: 250px;
+        padding: 20px;
+    }
+
+    .titulo-classificacao h2 {
+        font-size: 26px;
+    }
+
+    .legenda-ranking {
+        justify-content: flex-start;
+        gap: 12px 20px;
+    }
+
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 480px) {
+
+    .pagina-ranking {
+        padding: 24px 4%;
+    }
+
+    .titulo-ranking h1 {
+        font-size: 32px;
+    }
+
+    .kpi-ranking {
+        padding: 16px;
+    }
+
+    .titulo-kpi h2 {
+        font-size: 16px;
+    }
+
+    .integrantes-campeao {
+        gap: 12px;
+    }
+
+    .integrante-campeao img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .integrante-campeao span {
+        font-size: 11px;
+    }
+
+    .conteudo-mvp {
+        gap: 16px;
+    }
+
+    .foto-mvp {
+        width: 95px;
+        height: 115px;
+    }
+
+    .informacoes-mvp h3 {
+        font-size: 16px;
+    }
+
+    .pontuacao-campeao span,
+    .pontuacao-mvp span,
+    .quantidade-participantes span {
+        font-size: 54px;
+    }
+
+    .titulo-classificacao h2 {
+        font-size: 22px;
+    }
+
+    .legenda-ranking {
+        font-size: 11px;
+    }
+
+}

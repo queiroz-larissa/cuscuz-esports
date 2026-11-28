@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cuscuz Esports | Ranking</title>
+
+    <link rel="icon" href="../assets/imgs/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body class="body-ranking">
+
+
+    <!-- =====================================
+                HEADER
+===================================== -->
+
+    <header class="header">
+
+        <div class="container-header">
+
+            <!-- LOGOTIPO -->
+
+            <a href="../index.html" class="logo-header">
+                <img src="../assets/imgs/logo.png" alt="Cuscuz Esports">
+            </a>
+
+            <!-- MENU DE NAVEGAÇÃO -->
+
+            <nav class="navegacao-header" aria-label="Menu principal">
+
+                <ul class="menu-header">
+
+                    <li>
+                        <a href="../index.html">
+                            HOME
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./ranking.html" class="ativo" aria-current="page">
+                            RANKING
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#sobre">
+                            SOBRE
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- ACESSO ADMINISTRATIVO -->
+
+            <a href="../login.html" class="botao-login-header">
+
+                <svg class="icone-login" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+
+                </svg>
+
+                <span>LOGIN</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+            CONTEÚDO DA DASHBOARD
+===================================== -->
+
+    <main class="pagina-ranking">
+
+        <!-- TÍTULO E FILTRO DE CAMPEONATOS -->
+
+        <section class="cabecalho-ranking">
+
+            <div class="titulo-ranking">
+
+                <h1>RANKING</h1>
+
+                <p>Resultados dos campeonatos internos</p>
+
+            </div>
+
+            <div class="filtro-campeonato">
+
+                <label for="select_campeonato">
+                    CAMPEONATO
+                </label>
+
+                <select id="select_campeonato">
+                    <option value="">
+                        Selecione um campeonato
+                    </option>
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- INDICADORES (KPIs) -->
+
+        <section class="indicadores-ranking" aria-label="Indicadores do campeonato">
+
+            <!-- KPI 01 - CAMPEÃO -->
+
+            <article class="kpi-ranking kpi-campeao">
+
+                <div class="titulo-kpi">
+
+                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+
+                    <h2>CAMPEÃO</h2>
+
+                </div>
+
+                <div class="conteudo-campeao">
+
+                    <div class="integrantes-campeao" id="integrantes_campeao">
+
+                        <!-- Fotos e nicknames inseridos pelo JavaScript -->
+
+                    </div>
+
+                    <div class="pontuacao-campeao">
+
+                        <span id="pt_campeao">--</span>
+
+                        <p>PONTOS TOTAIS</p>
+
+                    </div>
+
+                </div>
+
+                <!-- NAVEGAÇÃO EM CASO DE EMPATE -->
+
+                <div class="navegacao-carrossel" id="carrossel_campeao" hidden>
+
+                    <button type="button" id="btn_campeao_anterior" aria-label="Campeão anterior">
+                        &#10094;
+                    </button>
+
+                    <span id="contador_campeao"></span>
+
+                    <button type="button" id="btn_campeao_proximo" aria-label="Próximo campeão">
+                        &#10095;
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- KPI 02 - MVP -->
+
+            <article class="kpi-ranking kpi-mvp">
+
+                <div class="titulo-kpi">
+
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+
+                    <h2>MVP</h2>
+
+                </div>
+
+                <div class="conteudo-mvp" id="conteudo_mvp">
+
+                    <div class="foto-mvp" id="foto_mvp">
+
+                        <!-- Foto inserida pelo JavaScript -->
+
+                    </div>
+
+                    <div class="informacoes-mvp">
+
+                        <h3 id="nickname_mvp">--</h3>
+
+                        <div class="pontuacao-mvp">
+
+                            <span id="kills_mvp">--</span>
+
+                            <p>KILLS</p>
+
+                        </div>
+
+                        <p class="descricao-mvp">Most Valuable Player</p>
+
+                    </div>
+
+                </div>
+
+                <!-- NAVEGAÇÃO EM CASO DE EMPATE -->
+
+                <div class="navegacao-carrossel" id="carrossel_mvp" hidden>
+
+                    <button type="button" id="btn_mvp_anterior" aria-label="MVP anterior">
+                        &#10094;
+                    </button>
+
+                    <span id="contador_mvp"></span>
+
+                    <button type="button" id="btn_mvp_proximo" aria-label="Próximo MVP">
+                        &#10095;
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- KPI 03 - PARTICIPANTES -->
+
+
+            <article class="kpi-ranking kpi-participantes">
+
+                <div class="titulo-kpi">
+
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
+
+                    <h2>PARTICIPANTES</h2>
+
+                </div>
+
+                <div class="conteudo-participantes">
+
+                    <div class="icone-participantes">
+
+                        <i class="fa-solid fa-users" aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="quantidade-participantes">
+
+                        <span id="total_participantes">--</span>
+
+                        <p>JOGADORES</p>
+
+                    </div>
+
+                    <p class="descricao-participantes">
+                        Total de participantes do campeonato
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+        </section>
+
+
+        <!-- CLASSIFICAÇÃO GERAL -->
+
+
+        <section class="classificacao-ranking">
+
+            <div class="titulo-classificacao">
+
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+
+                <h2 id="titulo_classificacao">CLASSIFICAÇÃO GERAL</h2>
+
+            </div>
+
+            <div class="container-tabela-ranking">
+
+                <table class="tabela-ranking" aria-labelledby="titulo_classificacao">
+
+                    <thead>
+
+                        <tr>
+                            <th scope="col">POS.</th>
+                            <th scope="col">INTEGRANTES</th>
+                            <th scope="col">WWCD</th>
+                            <th scope="col">PA</th>
+                            <th scope="col">PP</th>
+                            <th scope="col">PT</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tbody_classificacao">
+
+                        <!-- Resultados inseridos pelo JavaScript -->
+
+                        <tr>
+                            <td colspan="6" class="mensagem-ranking">
+                                Nenhum resultado disponível.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- LEGENDA DA TABELA -->
+
+            <div class="legenda-ranking">
+
+                <span><strong>WWCD:</strong> Vitórias</span>
+
+                <span><strong>PA:</strong> Pontos por abate</span>
+
+                <span><strong>PP:</strong> Pontos por posição</span>
+
+                <span><strong>PT:</strong> Pontos totais</span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+             FOOTER INSTITUCIONAL
+========================================== -->
+
+    <footer class="footer-cuscuz">
+
+        <div class="container-footer">
+
+            <!-- IDENTIDADE INSTITUCIONAL -->
+
+            <div class="footer-marca">
+
+                <a href="../index.html">
+                    <img src="../assets/imgs/logo.png" alt="Logo Cuscuz Esports" class="footer-logo">
+                </a>
+
+                <h2>CUSCUZ ESPORTS</h2>
+
+                <p>
+                    Mais que um time.<br>
+                    Uma comunidade.
+                </p>
+
+                <span class="footer-slogan">
+                    NÓS SOMOS CUSCUZ.
+                </span>
+
+            </div>
+
+            <!-- NAVEGAÇÃO -->
+
+            <div class="footer-coluna">
+
+                <h3>NAVEGAÇÃO</h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#sobre">Sobre nós</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#lideres">Nossa liderança</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#identidade">Nossa identidade</a>
+                    </li>
+
+                    <li>
+                        <a href="./ranking.html">Ranking</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- REDES SOCIAIS -->
+
+            <div class="footer-coluna">
+
+                <h3>ACOMPANHE O CUSCUZ</h3>
+
+                <div class="footer-redes">
+
+                    <!-- INSTAGRAM -->
+
+                    <a href="https://www.instagram.com/cuscuz.esports" target="_blank" rel="noopener noreferrer"
+                        class="footer-social" aria-label="Instagram" title="Instagram">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" aria-hidden="true">
+
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+
+                            <circle cx="12" cy="12" r="4" />
+
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+
+                        </svg>
+
+                    </a>
+
+                    <!-- TIKTOK - INSERIR LINK POSTERIORMENTE -->
+
+                    <a class="footer-social" aria-disabled="true" aria-label="TikTok" title="TikTok - em breve">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+
+                            <path d="M14 2h3.3c.3 2.4 1.8 4 4.2 4.4v3.4
+                            a9 9 0 0 1-4.2-1.3v7.2
+                            a6.3 6.3 0 1 1-6.3-6.3h.8v3.5
+                            a3 3 0 1 0 2.2 2.9z" />
+
+                        </svg>
+
+                    </a>
+
+                    <!-- YOUTUBE - INSERIR LINK POSTERIORMENTE -->
+
+                    <a class="footer-social" aria-disabled="true" aria-label="YouTube" title="YouTube - em breve">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+
+                            <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2
+                            C17.8 4.7 12 4.7 12 4.7
+                            s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2
+                            C2 9 2 12 2 12s0 3 .4 4.8
+                            a2.8 2.8 0 0 0 2 2
+                            c1.8.5 7.6.5 7.6.5
+                            s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2
+                            c.4-1.8.4-4.8.4-4.8s0-3-.4-4.8zM10
+                            15.5v-7l6 3.5z" />
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+                <!-- CONTATO -->
+
+                <h4 class="footer-titulo-contato">
+                    CONTATO
+                </h4>
+
+                <a href="mailto:cuscuz.esports@gmail.com" class="footer-email">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+
+                        <path d="m2 6 10 7 10-7" />
+
+                    </svg>
+
+                    <span>cuscuz.esports@gmail.com</span>
+
+                </a>
+
+            </div>
+
+            <!-- PROJETO ACADÊMICO -->
+
+            <div class="footer-coluna">
+
+                <h3>PROJETO ACADÊMICO</h3>
+
+                <div class="footer-academico">
+
+                    <p>São Paulo Tech School</p>
+
+                    <p>Análise e Desenvolvimento de Sistemas</p>
+
+                    <p>Projeto Individual — 2026</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ======================================
+        OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL
+    ======================================= -->
+
+        <div class="footer-compromisso-ods">
+
+            <h3>NOSSO COMPROMISSO COM OS ODS</h3>
+
+            <p class="footer-descricao-ods">
+                Uma comunidade comprometida com o bem-estar,
+                a inclusão e o respeito.
+            </p>
+
+            <div class="footer-lista-ods">
+
+                <!-- ODS 3 -->
+
+                <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank" rel="noopener noreferrer"
+                    class="footer-item-ods" title="Conheça o ODS 3">
+
+                    <img src="../assets/imgs/ods-3.jpeg" alt="ODS 3 - Saúde e Bem-Estar" loading="lazy">
+
+                </a>
+
+                <!-- ODS 10 -->
+
+                <a href="https://brasil.un.org/pt-br/sdgs/10" target="_blank" rel="noopener noreferrer"
+                    class="footer-item-ods" title="Conheça o ODS 10">
+
+                    <img src="../assets/imgs/ods-10.jpeg" alt="ODS 10 - Redução das Desigualdades" loading="lazy">
+
+                </a>
+
+                <!-- ODS 16 -->
+
+                <a href="https://brasil.un.org/pt-br/sdgs/16" target="_blank" rel="noopener noreferrer"
+                    class="footer-item-ods" title="Conheça o ODS 16">
+
+                    <img src="../assets/imgs/ods-16.jpeg" alt="ODS 16 - Paz, Justiça e Instituições Eficazes"
+                        loading="lazy">
+
+                </a>
+
+            </div>
+
+            <span class="footer-agenda-2030">
+                Objetivos de Desenvolvimento Sustentável — Agenda 2030
+            </span>
+
+        </div>
+
+        <!-- BARRA INFERIOR -->
+
+        <div class="footer-rodape">
+
+            <p>
+                &copy; 2026 Cuscuz Esports.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Desenvolvido por
+                <strong>Laripop</strong>
+                <span class="footer-coracao">♥</span>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
